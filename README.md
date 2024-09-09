@@ -1,7 +1,7 @@
 #About the project 
 ====================
 
-This is a webscraping project built in python.
+This is a webscraping project built in Python.
 -----------------------------------------------
 
 -The project is built to scrape the [fbref website](https://fbref.com/en/) to get basic team and player data
@@ -23,13 +23,20 @@ Get started
 1. Clone the repository:
     ```bash
     git clone https://github.com/Ace7codes/football-data-webscraping.git
-    cd fbref-web-scraper
+    cd football-data-webscraping
     ```
 
 2. Create and activate a virtual environment (optional but recommended):
-    ```bash
+    ```
+    FOR MAC
+    python3 -m venv venv
+    source venv/bin/activate 
+    ```
+
+    ```
+    FOR WINDOWS
     python -m venv venv
-    source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+    source venv/Scripts/activate
     ```
 
 3. Install the required packages:
