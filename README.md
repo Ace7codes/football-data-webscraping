@@ -4,8 +4,8 @@
 This is a webscraping project built in Python.
 -----------------------------------------------
 
--The project is built to scrape the [fbref website](https://fbref.com/en/) to get basic team and player data
--The project makes use of the BeautifulSoup, pandas, and requests library in order to successfully scrape the website to provide data that powers applications that require it
+- The project is built to scrape the [fbref website](https://fbref.com/en/) to get basic team and player data
+- The project makes use of the BeautifulSoup, pandas, and requests library in order to successfully scrape the website to provide data that powers applications that require it
 
 Get started
 ----------------
