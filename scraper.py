@@ -33,7 +33,7 @@ def get_team_data(league_uri, league_id, season, file, number_of_teams=10):
 
     team_data = pandas.DataFrame(data_dict)
 
-    team_data.to_csv(str(file), index=False)
+    team_data.to_csv(f"data/{str(file)}", index=False)
 
     return
 
