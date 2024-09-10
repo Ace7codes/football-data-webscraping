@@ -3,7 +3,7 @@ import requests
 import pandas
 from io import StringIO
 
-def get_team_data(league_uri, league_id, season, file):
+def get_team_data(league_uri, league_id, season, file, number_of_teams=10):
     base_url = "https://fbref.com"
     data = requests.get(f"{base_url}/en/comps/{str(league_id)}/{str(season)}/{str(season)}-{str(league_uri)}")
 
@@ -28,7 +28,7 @@ def get_team_data(league_uri, league_id, season, file):
     # Using range 10 because I only want the top 10
     data_dict = [
         {"team_name": club_names[i], "logo": images[i], "squad_link": squad_urls[i]}
-        for i in range(10)
+        for i in range(number_of_teams)
     ]
 
     team_data = pandas.DataFrame(data_dict)
