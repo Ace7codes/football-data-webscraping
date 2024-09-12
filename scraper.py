@@ -75,15 +75,16 @@ def get_team_data(league_uri, league_id, season, file, number_of_teams=10):
     print('Script executed successfully!\nView .csv file to see the data')
     return
 
+
 """
-Pass the following arguements to the function below:
+Pass the following arguements to the function call below:
 1. URI containing league name for the league to be scraped
 2. League ID gotten from the link's URL
 3. Last season's year bracket
 4. .csv file name for the scraped data to be saved to. Note that the file would be created in the data/ directory of the project
 5. Number of teams to be included in the scraping.
 
-See REAADME file for more details
+See README file for more details
 """
 
 get_team_data("Premier-League-Stats", "9", "2023-2024", "premier_league_test.csv")
