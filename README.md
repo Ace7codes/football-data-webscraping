@@ -50,6 +50,17 @@
    ```
 
 2. Insert the required arguements to the function call at the end of the script
+- The project scrapes for the teams with the highest finishing positions at the end of a specific football season (ideally the previous season), then scrapes data on the players in that squad for the current football season.
+- To determine the range of teams to be included in the scrape, a fifth optional arguement should be passed as an integer. By default, only the top 10 teams are included
+- Both fbref-specific arguements can be gotten from the individual fbref league page url. For example:
+
+```
+    https://fbref.com/en/comps/9/Premier-League-Stats
+```
+
+    league_uri = Premier-League-Stats
+    league_id = 9
+
 
 3. Run the scraper script:
 
