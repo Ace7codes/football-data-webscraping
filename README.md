@@ -15,8 +15,6 @@ Get started
 - Installation
 - Usage
 - Project Structure
-- Contributing
-- License
 
 ## Installation
 
