@@ -45,8 +45,8 @@
 
 1. Open the python script
 
-   ```scraper.py
-
+   ```
+   scraper.py
    ```
 
 2. Insert the required arguements to the function call at the end of the script
