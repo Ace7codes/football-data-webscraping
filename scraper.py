@@ -4,9 +4,10 @@ import pandas
 from io import StringIO
 import time
 
-def get_team_data(league_uri, league_id, season, file, number_of_teams=10):
+def get_team_data(league_uri, league_id, season, team_file, squad_file, number_of_teams=10):
     base_url = "https://fbref.com"
     data = requests.get(f"{base_url}/en/comps/{str(league_id)}/{str(season)}/{str(season)}-{str(league_uri)}")
+    print('Getting started.....')
     time.sleep(4)
     soup = BS(data.content, 'html.parser')
     table = soup.find("table", id=f'results{str(season)}{league_id}1_overall')
@@ -29,6 +30,10 @@ def get_team_data(league_uri, league_id, season, file, number_of_teams=10):
         {"team_name": club_names[i], "squad_link": squad_urls[i]}
         for i in range(number_of_teams)
     ]
+
+    team_data = pandas.DataFrame(data_dict)
+    team_data.to_csv(f"data/{str(team_file)}", index=False)
+    print('Scraped and saved team data. Commencing squad data scraping.......')
     squad = []
 
     for team in data_dict:
@@ -68,9 +73,9 @@ def get_team_data(league_uri, league_id, season, file, number_of_teams=10):
                     'age': age.split('-')[0]
                 }
             squad.append(player_data)
-
-    team_data = pandas.DataFrame(squad)
-    team_data.to_csv(f"data/{str(file)}", index=False)
+    print('Scraped squad data successfully. Parsing and saving data.....')
+    full_squad_data = pandas.DataFrame(squad)
+    full_squad_data.to_csv(f"data/{str(squad_file)}", index=False)
 
     print('Script executed successfully!\nView .csv file to see the data')
     return
@@ -81,10 +86,11 @@ Pass the following arguements to the function call below:
 1. URI containing league name for the league to be scraped
 2. League ID gotten from the link's URL
 3. Last season's year bracket
-4. .csv file name for the scraped data to be saved to. Note that the file would be created in the data/ directory of the project
-5. Number of teams to be included in the scraping.
+4. .csv file name for the scraped team data to be saved to. Note that the file would be created in the data/ directory of the project
+5. .csv file name for the scraped squad data to be saved to. Note that the file would be created in the data/ directory of the project
+6. Number of teams to be included in the scraping.
 
 See README file for more details
 """
 
-get_team_data("Premier-League-Stats", "9", "2023-2024", "premier_league_test.csv")
+get_team_data("Premier-League-Stats", "9", "2023-2024","premier_league_teams.csv", "premier_league_squads.csv")
