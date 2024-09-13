@@ -3,6 +3,7 @@ import requests
 import pandas
 from io import StringIO
 import time
+# from pprint import pprint
 
 def get_team_data(league_uri, league_id, season, team_file, squad_file, number_of_teams=10):
     base_url = "https://fbref.com"
@@ -35,7 +36,6 @@ def get_team_data(league_uri, league_id, season, team_file, squad_file, number_o
     team_data.to_csv(f"data/{str(team_file)}", index=False)
     print('Scraped and saved team data. Commencing squad data scraping.......')
     squad = []
-
     for team in data_dict:
         response = requests.get(team['squad_link'])
         time.sleep(4)
@@ -92,5 +92,36 @@ Pass the following arguements to the function call below:
 
 See README file for more details
 """
-
 get_team_data("Premier-League-Stats", "9", "2023-2024","premier_league_teams.csv", "premier_league_squads.csv")
+
+
+
+def get_match_data(team_uri, match_data_file):
+    print('Running script....')
+    base_url = 'https://fbref.com'
+    r = requests.get(f'{base_url}{team_uri}')
+    time.sleep(4)
+    match_details = BS(r.content, 'html.parser')
+
+    next_match = match_details.find('div', {'data-template' : 'Partials/Teams/Summary'}).find_all('p')[5].get_text().split('vs')[1]
+    last_match = match_details.find('div', {'data-template' : 'Partials/Teams/Summary'}).find_all('p')[4].get_text().split('at')[2]
+    last_match_link = match_details.find('div', {'data-template' : 'Partials/Teams/Summary'}).find_all('p')[4].find('a').get('href')
+
+    match_data = {
+        'last_match' : last_match,
+        'last_match_link' : base_url+last_match_link,
+        'next_match' : next_match
+    }
+
+    full_squad_data = pandas.DataFrame([match_data])
+    full_squad_data.to_csv(f"data/{str(match_data_file)}", index=False)
+    print('Done!')
+    return
+
+
+"""
+Pass the following arguements to the function below:
+team_uri = Unique uri for each team
+match_data_file = .csv file name for storing team match data scraped
+"""
+get_match_data('/en/squads/b8fd03ef/Manchester-City-Stats', 'match_data.csv')

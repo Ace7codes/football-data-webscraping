@@ -49,7 +49,7 @@
    scraper.py
    ```
 
-2. Insert the required arguements to the function call at the end of the script
+2. Insert the required arguements to the specific function call
 - The project scrapes for the teams with the highest finishing positions at the end of a specific football season (ideally the previous season), then scrapes data on the players in that squad for the current football season.
 - To determine the range of teams to be included in the scrape, a fifth optional arguement should be passed as an integer. By default, only the top 10 teams are included
 - Both fbref-specific arguements required by the function can be gotten from the individual fbref league page url. For example:
@@ -61,7 +61,7 @@
     league_uri = Premier-League-Stats
     league_id = 9
 
-
+- The project also has a function that gets team match schedule data.
 3. Run the scraper script:
 
    ```bash
