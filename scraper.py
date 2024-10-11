@@ -7,14 +7,16 @@ import time
 
 def get_team_data(league_uri, league_id, season, team_file, squad_file, number_of_teams=20):
     base_url = "https://fbref.com"
-    data = requests.get(f"{base_url}/en/comps/{str(league_id)}/{str(season)}/{str(season)}-{str(league_uri)}")
+    data = requests.get(f"{base_url}/en/comps/{str(league_id)}/{str(league_uri)}")
     print('Getting started.....')
     time.sleep(4)
     soup = BS(data.content, 'html.parser')
     table = soup.find("table", id=f'results{str(season)}{league_id}1_overall')
 
-    left_side = table.find_all('td', class_='left')
-
+    rows = table.find('tbody').find_all('tr')
+    left_side = []
+    for row in rows:
+        left_side.append(row.find('td', class_='left'))
     links = []
     for td in left_side:
         links.extend(td.find_all('a'))
@@ -30,14 +32,15 @@ def get_team_data(league_uri, league_id, season, team_file, squad_file, number_o
     next_match = []
     for link in squad_urls:
         team_page = requests.get(link)
+        print(link)
         time.sleep(4)
         team_soup = BS(team_page.content, 'html.parser')
 
-        summary_div = team_soup.find('div', {'data-template': 'Partials/Teams/Summary'})
+        summary_div = team_soup.find('div', id='meta').find('div', {'data-template': 'Partials/Teams/Summary'})
         paragraphs = summary_div.find_all('p')
         last_fixture = ' '.join(paragraphs[4].find('a').get_text().split(' ')[1:]).strip()
         last_match.append(last_fixture)
-        next_fixture = paragraphs[5].find('a').get_text().split(' ')[1].strip()
+        next_fixture = ' '.join(paragraphs[5].find('a').get_text().split(' ')[1:]).strip()
         next_match.append(next_fixture)
     data_dict = [
         {"team_name": club_names[i], "squad_link": squad_urls[i], "last_match" : last_match[i], "next_match" : next_match[i]}
@@ -56,7 +59,7 @@ def get_team_data(league_uri, league_id, season, team_file, squad_file, number_o
 
         big_logo = new_soup.find('img', class_='teamlogo').get('src')
 
-        squad_data = new_soup.find('table', id='stats_standard_9').find('tbody').find_all('tr')
+        squad_data = new_soup.find('table', id=f'stats_standard_{league_id}').find('tbody').find_all('tr')
 
 
         for player in squad_data:
@@ -87,7 +90,17 @@ def get_team_data(league_uri, league_id, season, team_file, squad_file, number_o
                 }
             squad.append(player_data)
         count += 1
-        print(f'{count} team(s) down {number_of_teams - count} to go')
+        if count == 1:
+            print(f'{count} team down {number_of_teams - count} teams to go')
+        elif number_of_teams - count == 1:
+            print(f'{count} teams down {number_of_teams - count} team to go')
+        else:
+            print(f'{count} teams down {number_of_teams - count} teams to go')
+        
+        if count%5 == 0:
+            print('Taking a break😴😴, be back in a minute....literally......')
+            time.sleep(60)
+            print('Well that was refreshing😊😊, resuming scraping......')
     print('Scraped squad data successfully. Parsing and saving data.....')
     full_squad_data = pandas.DataFrame(squad)
     full_squad_data.to_csv(f"data/{str(squad_file)}", index=False)
@@ -107,7 +120,7 @@ Pass the following arguements to the function call below:
 
 See README file for more details
 """
-get_team_data("Premier-League-Stats", "9", "2023-2024","premier_league_teams.csv", "premier_league_squads.csv", 1)
+get_team_data("Serie-A-Stats", "11", "2024-2025","serie_a_teams.csv", "serie_a_squads.csv")
 
 
 

@@ -1,0 +1,21 @@
+team_name,squad_link,last_match,next_match
+Napoli,https://fbref.com/en/squads/d48ad4ff/Napoli-Stats,Como,Empoli
+Inter,https://fbref.com/en/squads/d609edc0/Internazionale-Stats,Torino,Roma
+Juventus,https://fbref.com/en/squads/e0652b02/Juventus-Stats,Cagliari,Lazio
+Lazio,https://fbref.com/en/squads/7213da33/Lazio-Stats,Empoli,Juventus
+Udinese,https://fbref.com/en/squads/04eea015/Udinese-Stats,Lecce,Milan
+Milan,https://fbref.com/en/squads/dc56fe14/Milan-Stats,Fiorentina,Udinese
+Torino,https://fbref.com/en/squads/105360fe/Torino-Stats,Internazionale,Cagliari
+Atalanta,https://fbref.com/en/squads/922493f3/Atalanta-Stats,Genoa,Venezia
+Roma,https://fbref.com/en/squads/cf74a709/Roma-Stats,Monza,Internazionale
+Empoli,https://fbref.com/en/squads/a3d88bd8/Empoli-Stats,Lazio,Napoli
+Fiorentina,https://fbref.com/en/squads/421387cf/Fiorentina-Stats,Milan,Lecce
+Hellas Verona,https://fbref.com/en/squads/0e72edf2/Hellas-Verona-Stats,Venezia,Monza
+Bologna,https://fbref.com/en/squads/1d8099f8/Bologna-Stats,Parma,Genoa
+Como,https://fbref.com/en/squads/28c9c3cd/Como-Stats,Napoli,Parma
+Parma,https://fbref.com/en/squads/eab4234c/Parma-Stats,Bologna,Como
+Cagliari,https://fbref.com/en/squads/c4260e09/Cagliari-Stats,Juventus,Torino
+Lecce,https://fbref.com/en/squads/ffcbe334/Lecce-Stats,Udinese,Fiorentina
+Genoa,https://fbref.com/en/squads/658bf2de/Genoa-Stats,Atalanta,Bologna
+Monza,https://fbref.com/en/squads/21680aa4/Monza-Stats,Roma,Hellas Verona
+Venezia,https://fbref.com/en/squads/af5d5982/Venezia-Stats,Hellas Verona,Atalanta
