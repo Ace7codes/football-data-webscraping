@@ -1,0 +1,19 @@
+team_name,squad_link,last_match,next_match
+Monaco,https://fbref.com/en/squads/fd6114db/Monaco-Stats,Rennes,Lille
+Paris S-G,https://fbref.com/en/squads/e2d8892c/Paris-Saint-Germain-Stats,Nice,Strasbourg
+Marseille,https://fbref.com/en/squads/5725cc7b/Marseille-Stats,Angers,Montpellier
+Reims,https://fbref.com/en/squads/7fdd64e0/Reims-Stats,Montpellier,Auxerre
+Lille,https://fbref.com/en/squads/cb188c0c/Lille-Stats,Toulouse,Monaco
+Lens,https://fbref.com/en/squads/fd4e0f7d/Lens-Stats,Strasbourg,Saint-Étienne
+Strasbourg,https://fbref.com/en/squads/c0d3eab4/Strasbourg-Stats,Lens,Paris Saint-Germain
+Lyon,https://fbref.com/en/squads/d53c0b06/Lyon-Stats,Nantes,Le Havre
+Nice,https://fbref.com/en/squads/132ebc33/Nice-Stats,Paris Saint-Germain,Nantes
+Nantes,https://fbref.com/en/squads/d7a486cd/Nantes-Stats,Lyon,Nice
+Brest,https://fbref.com/en/squads/fb08dbb3/Brest-Stats,Le Havre,Rennes
+Rennes,https://fbref.com/en/squads/b3072e00/Rennes-Stats,Monaco,Brest
+Saint-Étienne,https://fbref.com/en/squads/d298ef2c/Saint-Etienne-Stats,Auxerre,Lens
+Auxerre,https://fbref.com/en/squads/5ae09109/Auxerre-Stats,Saint-Étienne,Reims
+Le Havre,https://fbref.com/en/squads/5c2737db/Le-Havre-Stats,Brest,Lyon
+Toulouse,https://fbref.com/en/squads/3f8c4b5f/Toulouse-Stats,Lille,Angers
+Montpellier,https://fbref.com/en/squads/281b0e73/Montpellier-Stats,Reims,Marseille
+Angers,https://fbref.com/en/squads/69236f98/Angers-Stats,Marseille,Toulouse

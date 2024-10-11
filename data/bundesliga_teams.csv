@@ -1,0 +1,19 @@
+team_name,squad_link,last_match,next_match
+Bayern Munich,https://fbref.com/en/squads/054efa67/Bayern-Munich-Stats,Eintracht Frankfurt,Stuttgart
+RB Leipzig,https://fbref.com/en/squads/acbb6a5b/RB-Leipzig-Stats,Heidenheim,Mainz 05
+Eint Frankfurt,https://fbref.com/en/squads/f0ac8ee6/Eintracht-Frankfurt-Stats,Bayern Munich,Leverkusen
+Freiburg,https://fbref.com/en/squads/a486e511/Freiburg-Stats,Werder Bremen,Augsburg
+Leverkusen,https://fbref.com/en/squads/c7a9f859/Bayer-Leverkusen-Stats,Holstein Kiel,Eintracht Frankfurt
+Union Berlin,https://fbref.com/en/squads/7a41008f/Union-Berlin-Stats,Dortmund,Holstein Kiel
+Dortmund,https://fbref.com/en/squads/add600ae/Dortmund-Stats,Union Berlin,St Pauli
+Stuttgart,https://fbref.com/en/squads/598bc722/Stuttgart-Stats,Hoffenheim,Bayern Munich
+Heidenheim,https://fbref.com/en/squads/18d9d2a7/Heidenheim-Stats,RB Leipzig,Mönchengladbach
+Mainz 05,https://fbref.com/en/squads/a224b06a/Mainz-05-Stats,St Pauli,RB Leipzig
+Werder Bremen,https://fbref.com/en/squads/62add3bf/Werder-Bremen-Stats,Freiburg,Wolfsburg
+Wolfsburg,https://fbref.com/en/squads/4eaa11d7/Wolfsburg-Stats,Bochum,Werder Bremen
+Augsburg,https://fbref.com/en/squads/0cdc4311/Augsburg-Stats,Mönchengladbach,Freiburg
+Gladbach,https://fbref.com/en/squads/32f3ee20/Monchengladbach-Stats,Augsburg,Heidenheim
+St. Pauli,https://fbref.com/en/squads/54864664/St-Pauli-Stats,Mainz 05,Dortmund
+Hoffenheim,https://fbref.com/en/squads/033ea6b8/Hoffenheim-Stats,Stuttgart,Bochum
+Holstein Kiel,https://fbref.com/en/squads/2ac661d9/Holstein-Kiel-Stats,Leverkusen,Union Berlin
+Bochum,https://fbref.com/en/squads/b42c6323/Bochum-Stats,Wolfsburg,Hoffenheim

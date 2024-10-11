@@ -120,7 +120,7 @@ Pass the following arguements to the function call below:
 
 See README file for more details
 """
-get_team_data("Serie-A-Stats", "11", "2024-2025","serie_a_teams.csv", "serie_a_squads.csv")
+get_team_data("Bundesliga-Stats", "20", "2024-2025","bundesliga_teams.csv", "bundesliga_squads.csv", 18)
 
 
 
